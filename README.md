@@ -111,4 +111,12 @@ Relationship: Each payment is directly linked to a specific booking.
  + review_date
 Relationship: A review is left by a user for a specific property.
 
+# Feature Breakdown
++ User Management: This feature allows for secure user registration, authentication, and profile management. It ensures that users can create accounts, log in, and manage their personal information within the application.
++ Property Management: This functionality enables users to create, update, retrieve, and delete property listings. It is crucial for hosts to manage their accommodations and for guests to browse available properties.
+Booking System: This feature facilitates the reservation of properties and the management of booking details, including check-in and check-out dates. It is essential for users to book stays and for hosts to manage their reservations.
++ Payment Processing: This system handles financial transactions related to bookings. It ensures secure and efficient processing of payments, recording all necessary payment details.
++ Review System: This feature allows users to leave reviews and ratings for properties after their stay. It provides valuable feedback for both hosts and future guests, contributing to the platform's trustworthiness.
++ Data Optimization: This involves implementing indexing and caching strategies to ensure efficient data retrieval and storage. It is vital for improving the overall performance and responsiveness of the backend system.
++ API Documentation: The backend APIs are documented using the OpenAPI Standard, ensuring clarity and ease of integration. This provides developers with clear guidelines for interacting with the backend services.
 
