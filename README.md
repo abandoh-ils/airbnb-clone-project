@@ -66,3 +66,49 @@ Ensuring successful project completion and delivery.
 + Redis: Used for caching and session management. 
 + Docker: Containerization tool for consistent development and deployment environments. 
 + CI/CD Pipelines: Automated pipelines for testing and deploying code changes. 
+
+# Database Design
++ Users
+ + user_id (Primary Key)
+ + username
+ + email
+ + password_hash
+ + registration_date
+Relationship: A user can own multiple properties and make multiple bookings. Users can also leave multiple reviews.
+
++ Properties
+ + property_id (Primary Key)
+ + host_id (Foreign Key to Users)
+ + title
+ + description
+ + location
+ + price_per_night
+Relationship: Each property belongs to one user (host). A property can have multiple bookings and multiple reviews.
+
++ Bookings
+ + booking_id (Primary Key)
+ + user_id (Foreign Key to Users)
+ + property_id (Foreign Key to Properties)
+ + check_in_date
+ + check_out_date
+ + total_price
+Relationship: A booking is made by a user for a specific property. Each booking is associated with a payment.
+
++ Payments
+ + payment_id (Primary Key)
+ + booking_id (Foreign Key to Bookings)
+ + amount
+ + payment_date
+ + status
+Relationship: Each payment is directly linked to a specific booking.
+
++ Reviews
+ + review_id (Primary Key)
+ + user_id (Foreign Key to Users)
+ + property_id (Foreign Key to Properties)
+ + rating
+ + comment
+ + review_date
+Relationship: A review is left by a user for a specific property.
+
+
