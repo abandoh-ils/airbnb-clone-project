@@ -74,7 +74,8 @@ Ensuring successful project completion and delivery.
   + email
   + password_hash
   + registration_date
-- Relationship: A user can own multiple properties and make multiple bookings. Users can also leave multiple reviews.
+
+  Relationship: A user can own multiple properties and make multiple bookings. Users can also leave multiple reviews.
 
 + Properties
   + property_id (Primary Key)
@@ -83,7 +84,8 @@ Ensuring successful project completion and delivery.
   + description
   + location
   + price_per_night
-- Relationship: Each property belongs to one user (host). A property can have multiple bookings and multiple reviews.
+
+  Relationship: Each property belongs to one user (host). A property can have multiple bookings and multiple reviews.
 
 + Bookings
   + booking_id (Primary Key)
@@ -92,7 +94,8 @@ Ensuring successful project completion and delivery.
   + check_in_date
   + check_out_date
   + total_price
-- Relationship: A booking is made by a user for a specific property. Each booking is associated with a payment.
+
+  Relationship: A booking is made by a user for a specific property. Each booking is associated with a payment.
 
 + Payments
   + payment_id (Primary Key)
@@ -100,7 +103,8 @@ Ensuring successful project completion and delivery.
   + amount
   + payment_date
   + status
-- Relationship: Each payment is directly linked to a specific booking.
+
+  Relationship: Each payment is directly linked to a specific booking.
 
 + Reviews
   + review_id (Primary Key)
@@ -109,7 +113,8 @@ Ensuring successful project completion and delivery.
   + rating
   + comment
   + review_date
-- Relationship: A review is left by a user for a specific property.
+
+  Relationship: A review is left by a user for a specific property.
 
 # Feature Breakdown
 + User Management: This feature allows for secure user registration, authentication, and profile management. It ensures that users can create accounts, log in, and manage their personal information within the application.
@@ -132,3 +137,13 @@ Ensuring the security of the API is paramount for protecting sensitive user data
 + Rate Limiting: This mechanism controls the number of API requests a user or client can make within a specified timeframe. Rate limiting is essential for preventing abuse, such as denial-of-service (DoS) attacks, brute-force login attempts, or excessive data scraping. By limiting requests, it helps maintain the stability and availability of the API, protecting the overall performance of the platform.
 
 These measures collectively contribute to a robust security posture, safeguarding against unauthorized access, data breaches, and service disruptions across all key areas of the Airbnb Clone project.
+
+# CI/CD Pipeline
+CI/CD Pipelines are automated processes that integrate code changes (Continuous Integration) and deliver them to production (Continuous Delivery/Deployment). They are crucial for the Airbnb Clone project as they enable faster and more reliable software releases, reduce manual errors, and ensure consistent quality. By automating testing and deployment, the development team can frequently deliver new features and bug fixes with confidence.
+
+Tools that could be used for the CI/CD pipeline include:
+
++ GitHub Actions: For automating workflows directly within the GitHub repository, including building, testing, and deploying code.
++ Docker: For containerizing the application, ensuring consistent environments across development, testing, and production. This helps prevent "it works on my machine" issues.
++ Celery: While primarily for asynchronous tasks, in a broader sense, it facilitates background processing that can be integrated into the CI/CD flow for tasks like post-deployment data processing or notifications.
++ PostgreSQL/Redis: While databases and caching tools, their integration and setup can be automated within the CI/CD pipeline to ensure proper environment provisioning for testing and deployment.
